@@ -6,11 +6,17 @@
 </head>
 <body>
   <h1><b id="name"></b> <span id="version"></span></h1>
-  <p class="frage" data-i18n="question"></p>
-  <output id="wert"></output>
-  <input type="range" id="regler" min="0" step="1">
-  <div class="skala" id="skala"></div>
-  <p class="beispiel" id="beispiel"></p>
+  <label class="schalter">
+    <input type="checkbox" id="aktiv" role="switch">
+    <span data-i18n="toggle"></span>
+  </label>
+  <fieldset id="einstellung">
+    <p class="frage" data-i18n="question"></p>
+    <output id="wert"></output>
+    <input type="range" id="regler" min="0" step="1">
+    <div class="skala" id="skala"></div>
+    <p class="beispiel" id="beispiel"></p>
+  </fieldset>
   <script src="i18n.js"></script>
   <script src="popup.js"></script>
 </body>

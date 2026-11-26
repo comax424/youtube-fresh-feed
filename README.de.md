@@ -14,7 +14,9 @@ bleiben unverändert.
 
 ## Funktionen
 
-- **Eigene Grenze:** Auf das Erweiterungssymbol klicken und den Regler verschieben. Darunter steht, welches Alter gerade
+- **Ein/Aus-Schalter:** Auf das Erweiterungssymbol klicken; „Alte Videos ausblenden“ schaltet den Filter aus und an.
+  Ausgeschaltet sind alle ausgeblendeten Videos sofort wieder da; die Grenze bleibt für das nächste Mal gespeichert.
+- **Eigene Grenze:** Im selben Popup den Regler verschieben. Darunter steht, welches Alter gerade
   noch bleibt und welches schon verschwindet. Änderungen wirken sofort, auch in bereits offenen YouTube-Tabs.
 - **Funktioniert in jeder YouTube-Sprache:** Die Erweiterung liest das Alter, das YouTube unter jedes Video schreibt
   („vor 3 Monaten“, „3 months ago“, „il y a 3 mois“, „3 месяца назад“, auch „vor 2 Tagen gestreamt“).
@@ -31,7 +33,7 @@ bleiben unverändert.
 
 Die Stufen sind genau die, in denen YouTube das Alter anzeigt: Nach 4 Wochen heißt es „vor 1 Monat“, nach 11 Monaten
 „vor 1 Jahr“. Feinere Stufen (etwa 100 Tage) hätten keine Wirkung, weil YouTube nie so genau anzeigt.
-Standard: 4 Wochen. Die Einstellung wird lokal im Browserprofil gespeichert.
+Standard: Filter an, 4 Wochen. Beide Einstellungen werden lokal im Browserprofil gespeichert.
 
 ## Sprachen
 
@@ -86,7 +88,7 @@ Firefox installiert Add-ons nur dauerhaft, wenn sie signiert sind. Das Signieren
 
 ## Datenschutz
 
-- Die Erweiterung läuft nur auf `https://www.youtube.com/*` und verlangt eine einzige Berechtigung: `storage`, für die Grenze.
+- Die Erweiterung läuft nur auf `https://www.youtube.com/*` und verlangt eine einzige Berechtigung: `storage`, für Schalter und Grenze.
   In Firefox erklärt sie, dass sie keine Daten erhebt.
 - Sie schickt **überhaupt keine Anfragen** – sie liest nur Text, der schon auf der Seite steht, und blendet Elemente aus.
 - Keine Statistik, kein Tracking, keine fremden Server. Was du anschaust, bleibt zwischen dir und YouTube.
@@ -128,7 +130,8 @@ google-chrome-stable --headless=new --user-data-dir=/tmp/ff-test --allow-file-ac
 
 `test/zeitangaben/` enthält die Altersangaben echter YouTube-Suchergebnisse, eine Datei pro Oberflächensprache.
 Der zweite Test lässt `content.js` auf einer nachgebauten Startseite mit Endlos-Scroll und wiederverwendeten Kacheln
-laufen und wechselt die Grenze dreimal (28 Tage, 7 Tage, 5 Jahre).
+laufen und ändert die Einstellungen
+Schritt für Schritt (28 Tage, 7 Tage, Filter aus, Filter wieder an, 5 Jahre).
 
 ## Lizenz
 

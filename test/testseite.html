@@ -17,7 +17,8 @@
     local: { get: (standard) => Promise.resolve({ ...standard }) },
     onChanged: { addListener: (f) => hoerer.push(f) },
   } };
-  const grenzeSetzen = (tage) => hoerer.forEach((f) => f({ maxTage: { newValue: tage } }));
+  const setzen = (schluessel, wert) => hoerer.forEach((f) => f({ [schluessel]: { newValue: wert } }));
+  const grenzeSetzen = (tage) => setzen('maxTage', tage);
   const zustand = (name) => name + ': ' + [...document.querySelectorAll('ytd-rich-item-renderer')]
     .map((e) => e.id + '=' + (e.classList.contains('fresh-feed-hidden') ? 'AUS' : 'an')).join(' ');
 </script>
@@ -30,6 +31,8 @@
     document.getElementById('altdatum').textContent = 'vor 1 Tag';
   }, 500);
   setTimeout(() => { ergebnis.push(zustand('28 Tage')); grenzeSetzen(7); }, 1000);
-  setTimeout(() => { ergebnis.push(zustand('7 Tage')); grenzeSetzen(1825); }, 1500);
-  setTimeout(() => { ergebnis.push(zustand('5 Jahre')); document.title = ergebnis.join(' | '); }, 2000);
+  setTimeout(() => { ergebnis.push(zustand('7 Tage')); setzen('aktiv', false); }, 1500);
+  setTimeout(() => { ergebnis.push(zustand('7 Tage, Filter aus')); setzen('aktiv', true); }, 2000);
+  setTimeout(() => { ergebnis.push(zustand('7 Tage, Filter wieder an')); grenzeSetzen(1825); }, 2500);
+  setTimeout(() => { ergebnis.push(zustand('5 Jahre')); document.title = ergebnis.join(' | '); }, 3000);
 </script></body></html>

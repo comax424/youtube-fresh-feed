@@ -6,9 +6,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## [1.3.0] - 2026-11-26
+## [1.4.0] - 2026-11-26
 
-First public release. Versions 1.0.0–1.2.0 were only used locally.
+First public release. Versions 1.0.0–1.3.0 were only used locally.
+
+### Added
+
+- On/off switch “Hide old videos” in the popup. Switched off, all hidden videos reappear at once and the slider is
+  greyed out; the limit is kept.
+
+## [1.3.0] - 2026-11-26
 
 ### Added
 
@@ -42,5 +49,5 @@ First public release. Versions 1.0.0–1.2.0 were only used locally.
 
 - Hides videos on the YouTube home page that are older than 4 weeks (German and English interface).
 
-[Unreleased]: https://github.com/comax424/youtube-fresh-feed/compare/v1.3.0...HEAD
-[1.3.0]: https://github.com/comax424/youtube-fresh-feed/releases/tag/v1.3.0
+[Unreleased]: https://github.com/comax424/youtube-fresh-feed/compare/v1.4.0...HEAD
+[1.4.0]: https://github.com/comax424/youtube-fresh-feed/releases/tag/v1.4.0

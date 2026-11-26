@@ -5,6 +5,7 @@
 // Grenze in Tagen, wird im Popup eingestellt. Standard 4 Wochen:
 // "vor 4 Wochen" bleibt sichtbar, "vor 1 Monat" verschwindet.
 let maxTage = 28;
+let aktiv = true; // Ein/Aus-Schalter im Popup
 
 // Bereich, in dem gefiltert wird: nur die Startseite.
 const BEREICH = 'ytd-browse[page-subtype="home"]';
@@ -54,7 +55,8 @@ function erkenner(sprachen) {
 
 function filtern(alterInTagen) {
   const alt = new Set();
-  for (const bereich of document.querySelectorAll(BEREICH)) {
+  // Filter aus: alt bleibt leer, unten werden alle Markierungen entfernt
+  for (const bereich of aktiv ? document.querySelectorAll(BEREICH) : []) {
     const walker = document.createTreeWalker(bereich, NodeFilter.SHOW_TEXT);
     for (let knoten = walker.nextNode(); knoten; knoten = walker.nextNode()) {
       // Manche Metadaten stehen als "1.234 Aufrufe • vor 2 Monaten" in einem Knoten.
@@ -89,9 +91,11 @@ if (typeof module !== 'undefined') {
     setTimeout(() => { geplant = false; lauf(); }, 250);
   }).observe(document.documentElement, { childList: true, subtree: true, characterData: true });
 
-  chrome.storage.local.get({ maxTage }).then((wert) => { maxTage = wert.maxTage; lauf(); });
+  chrome.storage.local.get({ maxTage, aktiv }).then((wert) => { ({ maxTage, aktiv } = wert); lauf(); });
   // Änderung im Popup wirkt sofort, ohne die Seite neu zu laden.
   chrome.storage.onChanged.addListener((aenderung) => {
-    if (aenderung.maxTage) { maxTage = aenderung.maxTage.newValue; lauf(); }
+    if (aenderung.maxTage) maxTage = aenderung.maxTage.newValue;
+    if (aenderung.aktiv) aktiv = aenderung.aktiv.newValue;
+    lauf();
   });
 }

@@ -43,14 +43,24 @@ function anzeigen() {
   beispiel.replaceChildren(`${text('keep')}: `, b(vor(s)), ` · ${text('hide')}: `, b(vor(naechste)));
 }
 
-// Gespeicherten Wert auf die nächstliegende Stufe abbilden (Standard 28 Tage = 4 Wochen).
-chrome.storage.local.get({ maxTage: 28 }).then(({ maxTage }) => {
+const aktiv = document.getElementById('aktiv');
+const einstellung = document.getElementById('einstellung');
+
+// Gespeicherten Wert auf die nächstliegende Stufe abbilden (Standard 28 Tage = 4 Wochen, Filter an).
+chrome.storage.local.get({ maxTage: 28, aktiv: true }).then((s) => {
   let beste = 0;
-  STUFEN.forEach((s, i) => {
-    if (Math.abs(s.tage - maxTage) < Math.abs(STUFEN[beste].tage - maxTage)) beste = i;
+  STUFEN.forEach((stufe, i) => {
+    if (Math.abs(stufe.tage - s.maxTage) < Math.abs(STUFEN[beste].tage - s.maxTage)) beste = i;
   });
   regler.value = beste;
+  aktiv.checked = s.aktiv;
+  einstellung.disabled = !s.aktiv; // Regler grau und gesperrt, die Grenze bleibt gespeichert
   anzeigen();
+});
+
+aktiv.addEventListener('change', () => {
+  einstellung.disabled = !aktiv.checked;
+  chrome.storage.local.set({ aktiv: aktiv.checked });
 });
 
 regler.addEventListener('input', anzeigen); // Anzeige beim Ziehen

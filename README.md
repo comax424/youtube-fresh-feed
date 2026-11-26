@@ -13,7 +13,9 @@ extension it only shows what is recent enough for you. Subscriptions, search, ch
 
 ## Features
 
-- **Your own limit:** click the extension icon and move the slider. Below the slider you see which age is still shown
+- **On/off switch:** click the extension icon; “Hide old videos” turns the filter off and on. Switched off, every
+  hidden video comes back at once; your limit is kept for the next time.
+- **Your own limit:** move the slider in the same popup. Below the slider you see which age is still shown
   and which is already hidden. Changes apply at once, also in YouTube tabs that are already open.
 - **Works in every YouTube language:** the extension reads the age YouTube writes under each video
   (“3 months ago”, “vor 3 Monaten”, “il y a 3 mois”, “3 месяца назад”, also “Streamed 2 days ago”).
@@ -30,7 +32,7 @@ extension it only shows what is recent enough for you. Subscriptions, search, ch
 
 The steps are exactly the ones YouTube uses to show a video's age: after 4 weeks it says “1 month ago”, after
 11 months “1 year ago”. Finer steps (say, 100 days) would have no effect, because YouTube never shows that precision.
-Default: 4 weeks. The setting is stored locally in your browser profile.
+Default: filter on, 4 weeks. Both settings are stored locally in your browser profile.
 
 ## Languages
 
@@ -85,7 +87,7 @@ Firefox only installs signed add-ons permanently. Signing is free and done by Mo
 
 ## Privacy
 
-- The extension only runs on `https://www.youtube.com/*` and requests a single permission: `storage`, for the limit.
+- The extension only runs on `https://www.youtube.com/*` and requests a single permission: `storage`, for the switch and the limit.
   In Firefox it declares that it collects no data.
 - It sends **no requests at all** – it only reads text that is already on the page and hides elements.
 - No analytics, no tracking, no third-party servers. What you watch stays between you and YouTube.
@@ -125,8 +127,8 @@ google-chrome-stable --headless=new --user-data-dir=/tmp/ff-test --allow-file-ac
 ```
 
 `test/zeitangaben/` holds the age texts of real YouTube search results, one file per interface language.
-The second test runs `content.js` on a mock home page with endless scrolling and recycled tiles, and changes the limit
-three times (28 days, 7 days, 5 years).
+The second test runs `content.js` on a mock home page with endless scrolling and recycled tiles, and changes the settings
+step by step (28 days, 7 days, filter off, filter on again, 5 years).
 
 ## License
 

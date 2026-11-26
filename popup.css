@@ -3,6 +3,7 @@
   --text: #1f1f1f;
   --leise: #606060;
   --akzent: #c4302b;
+  --aus: #b4b4b4;
   --daumen: 16px;
 }
 @media (prefers-color-scheme: dark) {
@@ -11,6 +12,7 @@
     --text: #f1f1f1;
     --leise: #aaaaaa;
     --akzent: #ff5a52;
+    --aus: #5c5c5c;
   }
 }
 
@@ -24,6 +26,34 @@ body {
 }
 h1 { font-size: 15px; margin: 0 0 8px; }
 h1 span { font-weight: normal; color: var(--leise); }
+
+/* Ein/Aus-Schalter; der Knopf ist ein Hintergrundverlauf, damit kein ::before auf <input> nötig ist */
+.schalter {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 4px 0 14px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+}
+.schalter input {
+  appearance: none;
+  flex: none;
+  width: 36px;
+  height: 20px;
+  margin: 0;
+  border-radius: 10px;
+  background: radial-gradient(circle at 10px 50%, #fff 7px, transparent 7.5px), var(--aus);
+  cursor: pointer;
+}
+.schalter input:checked {
+  background: radial-gradient(circle at 26px 50%, #fff 7px, transparent 7.5px), var(--akzent);
+}
+.schalter input:focus-visible { outline: 2px solid var(--akzent); outline-offset: 2px; }
+
+fieldset { border: 0; margin: 0; padding: 0; min-width: 0; }
+fieldset:disabled { opacity: .4; }
 .frage { margin: 0; color: var(--leise); }
 output {
   display: block;
