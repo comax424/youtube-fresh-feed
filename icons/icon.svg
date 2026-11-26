@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128">
+  <!-- Fresh leaf with a play triangle as its vein: "fresh video" -->
+  <rect width="128" height="128" rx="28" fill="#16a34a"/>
+  <path d="M25 103C25 52 55 22 108 20C108 73 78 103 25 103Z" fill="#fff"/>
+  <path d="M25 103 15 113" stroke="#fff" stroke-width="9" stroke-linecap="round"/>
+  <path d="M55 44V84L88 64Z" fill="#16a34a" stroke="#16a34a" stroke-width="5" stroke-linejoin="round"/>
+</svg>

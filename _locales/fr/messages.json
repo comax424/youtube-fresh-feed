@@ -1,0 +1,8 @@
+{
+  "extName": {
+    "message": "Flux frais pour YouTube (non officiel)"
+  },
+  "extDescription": {
+    "message": "Masque sur la page d’accueil de YouTube les vidéos plus anciennes qu’une limite au choix (1 semaine à 5 ans)."
+  }
+}

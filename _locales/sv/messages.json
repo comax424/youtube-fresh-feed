@@ -1,0 +1,8 @@
+{
+  "extName": {
+    "message": "Färskt flöde för YouTube (inofficiellt)"
+  },
+  "extDescription": {
+    "message": "Döljer videor på YouTubes startsida som är äldre än en valfri gräns (1 vecka till 5 år)."
+  }
+}

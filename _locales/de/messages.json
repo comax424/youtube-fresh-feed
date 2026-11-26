@@ -1,0 +1,8 @@
+{
+  "extName": {
+    "message": "Frischer Feed für YouTube (inoffiziell)"
+  },
+  "extDescription": {
+    "message": "Blendet auf der YouTube-Startseite Videos aus, die älter als eine wählbare Grenze sind (1 Woche bis 5 Jahre)."
+  }
+}

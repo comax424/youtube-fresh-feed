@@ -1,0 +1,28 @@
+pred 11 d.
+pred 11 h
+pred 13 h
+pred 18 h
+pred 1 d.
+pred 1 mes.
+pred 1 r.
+pred 20 h
+pred 22 h
+pred 2 mes.
+pred 2 r.
+pred 2 týž.
+pred 3 d.
+pred 3 r.
+pred 5 h
+pred 6 d.
+pred 6 mes.
+pred 7 h
+pred 9 h
+Streamované pred 12 h
+Streamované pred 13 h
+Streamované pred 1 d.
+Streamované pred 2 d.
+Streamované pred 3 d.
+Streamované pred 4 d.
+Streamované pred 6 h
+Streamované pred 7 d.
+Streamované pred 8 d.

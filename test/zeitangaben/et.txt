@@ -1,0 +1,26 @@
+11 p eest
+11 t eest
+13 t eest
+17 a eest
+1 a eest
+1 kuu eest
+1 p eest
+2 näd eest
+3 a eest
+3 näd eest
+3 p eest
+3 t eest
+4 kuu eest
+5 t eest
+6 kuu eest
+6 p eest
+9 t eest
+Otseülekanne toimus 10 t eest
+Otseülekanne toimus 13 t eest
+Otseülekanne toimus 2 p eest
+Otseülekanne toimus 2 t eest
+Otseülekanne toimus 3 p eest
+Otseülekanne toimus 4 t eest
+Otseülekanne toimus 5 t eest
+Otseülekanne toimus 6 t eest
+Otseülekanne toimus 8 p eest

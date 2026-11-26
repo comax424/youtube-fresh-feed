@@ -1,0 +1,8 @@
+{
+  "extName": {
+    "message": "Fresh Feed for YouTube (unofficial)"
+  },
+  "extDescription": {
+    "message": "Hides videos on the YouTube home page that are older than a limit you choose (1 week to 5 years)."
+  }
+}

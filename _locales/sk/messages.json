@@ -1,0 +1,8 @@
+{
+  "extName": {
+    "message": "Čerstvý feed pre YouTube (neoficiálne)"
+  },
+  "extDescription": {
+    "message": "Skryje na hlavnej stránke YouTube videá staršie ako zvolený limit (1 týždeň až 5 rokov)."
+  }
+}

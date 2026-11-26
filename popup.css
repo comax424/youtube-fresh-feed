@@ -1,0 +1,56 @@
+:root {
+  --hintergrund: #ffffff;
+  --text: #1f1f1f;
+  --leise: #606060;
+  --akzent: #c4302b;
+  --daumen: 16px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --hintergrund: #212121;
+    --text: #f1f1f1;
+    --leise: #aaaaaa;
+    --akzent: #ff5a52;
+  }
+}
+
+body {
+  width: 300px;
+  margin: 0;
+  padding: 14px 16px 16px;
+  font: 13px/1.4 system-ui, sans-serif;
+  background: var(--hintergrund);
+  color: var(--text);
+}
+h1 { font-size: 15px; margin: 0 0 8px; }
+h1 span { font-weight: normal; color: var(--leise); }
+.frage { margin: 0; color: var(--leise); }
+output {
+  display: block;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 2px 0 10px;
+  color: var(--akzent);
+}
+input[type="range"] {
+  width: 100%;
+  margin: 0;
+  accent-color: var(--akzent);
+}
+/* Beschriftung exakt unter den Reglerpositionen: Daumenbreite links/rechts abziehen */
+.skala {
+  position: relative;
+  height: 16px;
+  margin: 2px calc(var(--daumen) / 2) 0;
+  font-size: 11px;
+  color: var(--leise);
+}
+.skala span {
+  position: absolute;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.skala span:first-child { transform: none; }
+.skala span:last-child { transform: translateX(-100%); }
+.beispiel { margin: 12px 0 0; color: var(--leise); }
+.beispiel b { color: var(--text); font-weight: 500; }

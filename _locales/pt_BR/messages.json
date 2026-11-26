@@ -1,0 +1,8 @@
+{
+  "extName": {
+    "message": "Feed fresco para YouTube (não oficial)"
+  },
+  "extDescription": {
+    "message": "Oculta na página inicial do YouTube os vídeos mais antigos que um limite à sua escolha (de 1 semana a 5 anos)."
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "extName": {
+    "message": "Świeży feed dla YouTube (nieoficjalne)"
+  },
+  "extDescription": {
+    "message": "Ukrywa na stronie głównej YouTube filmy starsze niż wybrany limit (od 1 tygodnia do 5 lat)."
+  }
+}

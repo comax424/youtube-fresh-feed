@@ -1,0 +1,8 @@
+pred 10 dnevi
+pred 11 urami
+pred 13 urami
+pred 1 dnevom
+pred 20 urami
+pred 5 urami
+pred 7 urami
+pred 9 urami
